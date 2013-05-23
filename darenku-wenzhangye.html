@@ -1,0 +1,384 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>文章页</title>
+	<link rel="stylesheet" href="http://new-icon.ol-img.com/article/common/css/init.css" MIME-type="text/css"/>
+	<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
+	<script src="js/mousewheel.js"></script>
+	<script src="js/scrollable.js"></script>
+	<script src="js/scrollable.navigator.js"></script>
+	<script src="js/blogger.js"></script>
+	<script src="js/common.js"></script>
+	<link rel="stylesheet" href="css/common.css" MIME-type="text/css">
+	<style>
+	.doc{width: auto;position: relative;background-color: #f2f2f2;overflow: hidden;}
+	.doc_head{width: 97px;position: absolute;top: 38px;left: 0;}
+	.doc_content{margin-left:97px;top:38px;position: relative;height:93%;min-width: 1265px}
+	.column{float: left;}
+	.items{margin: 10px;}
+	.gz{
+		height: 110px;
+		width: 62px;
+		background: #e3e3e3;
+		margin-left: 24px;
+		margin: 0 16px 0 24px;
+		color:#000;
+		font-size: 14px;
+		text-align: center;
+		padding-top:16px;
+		border-radius: 3px;
+	}
+	.doc .gz em{
+		display: inline-block;
+		width: 0;
+		border: 7px solid transparent;
+		border-left: 6px solid #e3e3e3;
+		position: absolute;
+		top: 8px;
+		left: 61px;
+	}
+	.doc .doc_pl em{
+		display: inline-block;
+		width: 0;
+		position: absolute;
+		left: -15px;
+		top: 0px;
+		border-right: 10px solid #e3e3e3; 
+		border-top: 0px solid transparent;
+		border-left: 6px solid transparent;
+		border-bottom: 10px solid transparent;
+	}
+	.gz_share{
+		width: 31px;
+		margin: 8px auto 0;
+	}
+	.gz_share a{
+		margin-bottom: 6px;
+	}
+
+	.doc_text h1{
+		color: #555;
+		font-size: 26px;
+		padding-bottom: 12px;
+		border-bottom: 1px solid #d1d1d1;
+		line-height: 40px;
+		margin-bottom: 11px;
+		height: 8%;
+	}
+	.doc_text{
+		line-height: 1.6;
+		font-size: 14px;
+		height: 98%;
+		float: left;
+		width: 600px;
+		margin-right: 40px;
+	}
+	.doc_zw{
+		overflow-y: scroll;
+		height: 88%;
+	}
+	.doc_text .date{
+		font-size:12px;
+		color: #b1b1b1;
+		vertical-align: 10px
+	}
+	.doc_text p{
+		margin-bottom: 13px;
+		color: #555;
+		line-height: 26px;
+	}
+	.footer{
+		height:20px;
+	}
+/*	
+	.photo_head h1{float: right;position:relative;width: 180px;height: 550px;background: url(img/photo_header.png) no-repeat 0 0;margin-right: 10px;}
+	.photo_head h1 span{position: absolute;top:120px;left:6px;font:22px microsoft yahei;color: #FFFFFF;}*/
+	.photo_hignlight{float: left;margin:10px 0 10px 10px;overflow: hidden;position: relative;}
+	.photo_hignlight li{float:left;overflow: hidden;-webkit-transition: width .2s ease-in-out;-moz-transition: width .2s ease-in-out;-o-transition: width .2s ease-in-out;-ms-transition: width .2s ease-in-out;transition: width .2s ease-in-out;}
+	
+	.photo_hignlight{float: left;margin:10px 0 10px 10px;overflow: hidden;position: relative;}
+	.photo_hignlight li{float:left;overflow: hidden;-webkit-transition: width .2s ease-in-out;-moz-transition: width .2s ease-in-out;-o-transition: width .2s ease-in-out;-ms-transition: width .2s ease-in-out;transition: width .2s ease-in-out;}
+	
+	.doc_pl_c2::-webkit-scrollbar,.doc_zw::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+		background-color:transparent;
+	}
+	.doc_pl_c2::-webkit-scrollbar-track,.doc_zw::-webkit-scrollbar-track {
+		background-color:#transparent;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+		margin: 2px 0;
+	}
+	.doc_pl_c2::-webkit-scrollbar-track:hover,.doc_zw::-webkit-scrollbar-track:hover {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+		background-color:#fefefe;
+	}
+	.doc_pl_c2::-webkit-scrollbar-track:active,.doc_zw::-webkit-scrollbar-track:active {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+		background-color:#f0f0f0;
+	}
+	.doc_pl_c2::-webkit-scrollbar-thumb,.doc_zw::-webkit-scrollbar-thumb {
+		background-color: #c7c6c6;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+	}
+	.doc_pl_c2::-webkit-scrollbar-thumb:hover, .doc_zw::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(0,0,0,0.4);
+		-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+	}
+	.doc_pl_c2::-webkit-scrollbar-thumb:active,.doc_zw::-webkit-scrollbar-thumb:active {
+		background: rgba(0,0,0,0.6);
+	}
+	.doc_pl_c2::-webkit-scrollbar-button:start:decrement,.doc_zw::-webkit-scrollbar-button:start:decrement
+	{
+		height:8px;
+		border: 4px solid transparent;
+		border-bottom:8px solid #555;
+	}
+	.doc_pl_c2::-webkit-scrollbar-button:end:increment, .doc_zw::-webkit-scrollbar-button:end:increment {
+		height:8px;
+		border: 4px solid transparent;
+		border-top:10px solid #555;
+	}
+	.doc_pl{
+		height: 95%;
+		width: 592px;
+		background: #e3e3e3;
+		padding-left: 20px;
+		padding-top: 20px;
+		float: left;
+		position: relative;
+	}
+	.doc_pl_c1 textarea{
+		font-size: 16px;
+		color: #c9c7c7;
+		width: 458px;
+		height: 70px;
+		margin: 2px 0px 0px 2px;
+		padding: 5px;
+		font-family: microsoftYaHei;
+		word-wrap: break-word;
+		line-height: 18px;
+		overflow-y: auto;
+		overflow-x: hidden; 
+		outline: none;
+		margin-right: 4px;
+	}
+	.doc_pl_c1 a{
+		display: inline-block;
+		height: 84px;
+		width: 79px;
+		vertical-align: top;
+		color: white;
+		line-height: 115px;
+		text-align: center;
+		background: url(./img/icon24.png) 0 -402px;
+		font-size: 16px;
+	}
+	.doc_pl_c1 a:hover{
+		text-decoration: none;
+		background: url(./img/icon24.png) -82px -402px;
+	}
+	.doc_pl_num .num{
+		color: #2378a1;
+		font-size: 18px;
+	}
+	.doc_pl_num{
+		color: #555;
+		font-size: 18px;
+		padding-left: 65px;
+		background: url(./img/icon24.png) -161px -401px no-repeat;
+		height: 41px;
+		line-height: 53px;
+	}
+	.doc_pl_num span{
+		font-size: 12px;
+		margin-left: 5px;
+		color: #a5a5a5;
+	}
+	.doc_pl_c1{
+		margin-bottom: 8px;
+	}
+	.doc_pl_c2{
+		height: 75%;
+		overflow-y: scroll;
+		width: 574px;
+	}
+	.doc_pl_list_ul{
+		width: 530px;
+	}
+	.doc_pl_list_ul li{
+		color: #555;
+		font-size: 12px;
+		height: 57px;
+		border-bottom: 1px solid #c5c5c5;
+		padding-top: 15px;
+	}
+	.doc_pl_list_ul .name{
+		color: #a5a5a5;
+		margin-left: 10px;
+	}
+	.list_info{
+		margin-bottom: 4px;
+	}
+	.list_content{
+		width: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<div class="header" id="header">
+		<div class="logo"><img src="img/logo.png" alt="" width=400 height=60></div>
+		<div class="nav">
+			<ul class="nav_l">
+				<li><a href="" class="nav_beau">美容</a></li>
+				<li><a href="" class="nav_fash">时尚</a></li>
+				<li><a href="" class="nav_life">生活</a></li>
+			</ul>
+			<div class="nav_brand" id="nav_brand">
+				<a href="" class="nav_brand_e">品牌</a>
+				<div class="nav_brand_c"><a target="_blank" href="http://hzp.onlylady.com/neutrogena/">露得清</a><a target="_blank" href="http://hzp.onlylady.com/lorealparis/">巴黎欧莱雅</a><a target="_blank" href="http://hzp.onlylady.com/esteelauder/">雅诗兰黛</a><a target="_blank" href="http://hzp.onlylady.com/biotherm/">碧欧泉</a><a target="_blank" href="http://hzp.onlylady.com/chanel/">香奈儿</a></div>
+			</div>
+		</div>
+		<div class="login">
+			<a href="">登陆</a> | <a href="">注册</a>
+		</div>
+	</div>
+	<div class="doc">
+		<div class="doc_head gz">
+			分享
+			<div class="bshare-custom icon-medium-plus gz_share"><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>		
+			<em></em>
+		</div>
+		<div class="doc_content">
+			<div class="doc_text" id="viewport">
+				<h1>哭过 笑过 疯过 闹过</h1>
+				<div class="doc_zw">
+					<span class="date">2013-01-24 09:24:38</span>
+				<p>
+					后来终于在眼泪中明白 有些人　一旦错过就不再 『开始的开始 我们都是孩子』 我们总以为未来还很长 可以一直这样疯闹下去 翻过围墙 在学校附近的奶茶店悠闲的聊天 晚饭的时间 争吵着谁去外面买饭 打电话到12点 第二天早早的赶去抄作业 傻逼 傻逼的对骂 却依旧关心着彼此 可是时间总是流逝得太快 分开的那天终将到来 那个曾经对你说 『你知道当你需要个夏天我会拼了命努力』 的那个人 可能也不得不离开你 奔向别的城市 于是 『我们就这样各自奔天涯』 『一步一步走过昨天我的孩子气』 开始明白 『青春是手牵手坐上了 永不回头的火车』 明白 很多那些我们原本认为不重要的日子不可能重新来过 明白 自己其实有多么喜欢那段时光 而现在 只想说声 谢谢 谢谢 在我最美好的年华能遇到你
+				</p>
+				<p>
+					后来终于在眼泪中明白 有些人　一旦错过就不再 『开始的开始 我们都是孩子』 我们总以为未来还很长 可以一直这样疯闹下去 翻过围墙 在学校附近的奶茶店悠闲的聊天 晚饭的时间 争吵着谁去外面买饭 打电话到12点 第二天早早的赶去抄作业 傻逼 傻逼的对骂 却依旧关心着彼此 可是时间总是流逝得太快 分开的那天终将到来 那个曾经对你说 『你知道当你需要个夏天我会拼了命努力』 的那个人 可能也不得不离开你 奔向别的城市 于是 『我们就这样各自奔天涯』 『一步一步走过昨天我的孩子气』 开始明白 『青春是手牵手坐上了 永不回头的火车』 明白 很多那些我们原本认为不重要的日子不可能重新来过 明白 自己其实有多么喜欢那段时光 而现在 只想说声 谢谢 谢谢 在我最美好的年华能遇到你
+				</p>
+				<p>
+					后来终于在眼泪中明白 有些人　一旦错过就不再 『开始的开始 我们都是孩子』 我们总以为未来还很长 可以一直这样疯闹下去 翻过围墙 在学校附近的奶茶店悠闲的聊天 晚饭的时间 争吵着谁去外面买饭 打电话到12点 第二天早早的赶去抄作业 傻逼 傻逼的对骂 却依旧关心着彼此 可是时间总是流逝得太快 分开的那天终将到来 那个曾经对你说 『你知道当你需要个夏天我会拼了命努力』 的那个人 可能也不得不离开你 奔向别的城市 于是 『我们就这样各自奔天涯』 『一步一步走过昨天我的孩子气』 开始明白 『青春是手牵手坐上了 永不回头的火车』 明白 很多那些我们原本认为不重要的日子不可能重新来过 明白 自己其实有多么喜欢那段时光 而现在 只想说声 谢谢 谢谢 在我最美好的年华能遇到你
+				</p>
+				<p> by 阿光 2013年伍月13日</p>
+				</div>
+			</div><!--doc_text-->
+			<div class="doc_pl">
+				<em></em>
+				<div class="doc_pl_c1">
+					<textarea class="input_detail " tabindex="1" title="微博输入框" name="" node-type="textEl" style="" placeholder="请输入评论内容"></textarea>
+					<a href="">发表评论</a>
+				</div>
+				<div class="doc_pl_c2">
+					<div class="doc_pl_num">
+						共<stong class="num"> 12 </stong>条评论
+						<span>当前显示仅显示五条</span>
+					</div>
+					<div class="doc_pl_list">
+						<ul class="doc_pl_list_ul">
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										一辈子的思念，不如在一起的那一刻
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										修长的腿哟，很漂亮呢，爷爷的时髦新装-MORTORP，如果不死心，噎你一句，别当非主流 RTORP，如果不死心，噎你一句，别当非主流 
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										迷失是因为你没有目标，找到目标就不会迷失了
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										迷失是因为你没有目标，找到目标就不会迷失了
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										修长的腿哟，很漂亮呢，爷爷的时髦新装-MORTORP，如果不死心，噎你一句，别当非主流 RTORP，如果不死心，噎你一句，别当非主流 
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										修长的腿哟，很漂亮呢，爷爷的时髦新装-MORTORP，如果不死心，噎你一句，别当非主流 RTORP，如果不死心，噎你一句，别当非主流 
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										修长的腿哟，很漂亮呢，爷爷的时髦新装-MORTORP，如果不死心，噎你一句，别当非主流 RTORP，如果不死心，噎你一句，别当非主流 
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										修长的腿哟，很漂亮呢，爷爷的时髦新装-MORTORP，如果不死心，噎你一句，别当非主流 RTORP，如果不死心，噎你一句，别当非主流 
+									</p>
+								</li>
+								<li><div class="list_info">2013.1.23 10:16:32<span class="name">游客瓜子说：</span></div>
+									<p class="list_content">
+										修长的腿哟，很漂亮呢，爷爷的时髦新装-MORTORP，如果不死心，噎你一句，别当非主流 RTORP，如果不死心，噎你一句，别当非主流 
+									</p>
+								</li>
+							</ul>	
+					</div>
+				</div>
+			</div>
+		</div><!--doc content-->
+	</div><!--doc-->
+	<div class="footer" id="footer">
+		<div class="nav_bar">
+			<div class="nav_top">
+				<a href="#" class="arrow"></a>
+				<div class="nav_body">
+					<ul class="nav_body_ul">
+						<li class="lrd"><a href="#" class="close">返回上页</a></li>
+						<li><a href="#" class="search">搜索博主</a></li>
+						<li><a href="#" class="eye">关注博主</a></li>
+						<li><a href="#" class="mark">博主清单</a></li>
+						<li class="rrd"><a href="#" class="hot">自我推荐</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="nav_hot">
+				<a href="#" class="close"></a>
+				<input type="text" value="" placeholder="请输入内容">
+				<a href="#" class="submit">提 交</a>
+			</div>	
+			<div class="nav_search">
+				<a href="#" class="close"></a>
+				<input id="search_text" type="text" value="" placeholder="请输入内容">
+				<div class="select">
+					<a href="#" class="value"  id="select_1">内 容</a>
+					<ul id="select_ul" class="dn">
+						<li><a href="#">达人库</a></li>
+						<li><a href="#">图库</a></li>
+						<li><a href="#">其他</a></li>
+					</ul>
+				</div>
+				<a href="#" class="submit">搜 索</a>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		OL_blogger.setViewportHeight(".doc");
+		OL_blogger.btnInit();
+	})
+	window.onresize = function(){OL_blogger.setViewportHeight(".doc");}
+	</script>
+</body>
+</html>

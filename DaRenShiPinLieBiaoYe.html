@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>达人视频列表页</title>
+	<link rel="stylesheet" href="http://new-icon.ol-img.com/article/common/css/init.css" />
+	<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
+	<script src="js/mousewheel.js"></script>
+	<script src="js/scrollable.js"></script>
+	<script src="js/scrollable.navigator.js"></script>
+	<script src="js/blogger.js"></script>
+	<script src="js/scrollbar.js"></script>
+	<script src="js/common.js"></script>
+	<link rel="stylesheet" href="css/common.css">
+	<style type="text/css">
+	.doc_head{width: 350px;position: absolute;top: 10px;left: 0;}
+	.video{margin:10px 0 0 350px;width:950;height:535px;}
+	.video_header h1{float: right;position:relative;width: 180px;height: 180px;background: url(img/video_header.png) no-repeat 0 0;margin-right: 10px;}
+	.video_header h1 span{position: absolute;bottom:30px;left:6px;font:22px microsoft yahei;color: #FFFFFF;}
+	.video_l{float: left;width: 720px;height:535px;background: #f0f0f0;}
+	.video_swf{width: 700px;height: 420px;margin:10px;}
+	.video_l h2{height: 35px;font:14px/35px microsoft yahei; border-bottom: 1px solid #c7c7c7;background: url(img/icon.png) no-repeat 0 -106px;margin:0 10px 10px;padding-left: 15px;}
+	.video_l h2 a{color: #000000;}
+	.video_l p{margin:0 10px 0 25px;color: #555555;font:12px/1.8em microsoft yahei;}
+	.video_r{position:relative;float: left;width: 225px;height:535px;background: #dfdfdf url(img/video_shadow.png) repeat-y left 0;border-right:1px solid #c2c0c0;}
+	.v_prev,.v_next{position: absolute;left: 2px;width: 223px;height: 26px;background-image:url(img/icon24.png);}
+	.v_prev{top:0;background-position: 0 -232px;}
+	.v_prev:hover{background-position: 0 -261px;}
+	.v_next{bottom:0;background-position: 0 -289px;}
+	.v_next:hover{background-position: 0 -319px;}
+	.video_slide{position: absolute;top:36px;left:0;width: 225px;height: 463px;overflow:hidden;}
+	.video_slide ul{position:absolute;top:0;left:17px;width: 190px;}
+	.video_slide li{width: 190px;height: 136px;}
+	.footer{
+		height:20px;
+	}
+	</style>
+</head>
+<body>
+	<div class="header" id="header">
+		<div class="logo"><img src="img/logo.png" alt="" width=400 height=60></div>
+		<div class="nav">
+			<ul class="nav_l">
+				<li><a href="" class="nav_beau">美容</a></li>
+				<li><a href="" class="nav_fash">时尚</a></li>
+				<li><a href="" class="nav_life">生活</a></li>
+			</ul>
+			<div class="nav_brand" id="nav_brand">
+				<a href="" class="nav_brand_e">品牌</a>
+				<div class="nav_brand_c"><a target="_blank" href="http://hzp.onlylady.com/neutrogena/">露得清</a><a target="_blank" href="http://hzp.onlylady.com/lorealparis/">巴黎欧莱雅</a><a target="_blank" href="http://hzp.onlylady.com/esteelauder/">雅诗兰黛</a><a target="_blank" href="http://hzp.onlylady.com/biotherm/">碧欧泉</a><a target="_blank" href="http://hzp.onlylady.com/chanel/">香奈儿</a></div>
+			</div>
+		</div>
+		<div class="login">
+			<a href="">登陆</a> | <a href="">注册</a>
+		</div>
+	</div>
+	<div class="viewport" id="viewport" style="background:url(http://olbpic.ol-img.com/album/201212/03/111928ixdnocjogqvqnooq.jpg) 0 0;">
+		<div class="doc_head video_header">
+			<h1><span>范冰冰</span></h1>
+		</div>
+		<div class="video">
+			<div class="video_l">
+				<div class="video_swf"><embed src="http://player.youku.com/player.php/partnerid/XMTcyNA==/sid/XNTIzMTc2MzUy/v.swf" quality="high" width="700" height="420" align="middle" allowscriptaccess="sameDomain" allowfullscreen="true" type="application/x-shockwave-flash" wmode="transparent" ></div>
+				<h2><a href="">老佛爷微电影上映 6女星香奈儿PK</a></h2>
+				<p>为庆祝嘉柏丽尔·香奈儿在法国杜维埃的第一家精品店开业100周年，卡尔·拉格斐创作了一部短片，由Keira Knightley和Clotilde Hesme主演。短片于2013年3月在巴黎郊外的电影城拍摄，为期两天。</p>
+			</div>
+			<div class="video_r">
+				<div class="video_slide" id="video_slide">
+					<ul>
+						<li><a href=""><img src="img/1.png" alt="" width=190 height=107></a><span>国杜维埃的第一家精品店</span></li>
+						<li><a href=""><img src="img/2.png" alt="" width=190 height=107></a><span>国杜维埃的第一家精品店</span></li>
+						<li><a href=""><img src="img/3.png" alt="" width=190 height=107></a><span>国杜维埃的第一家精品店</span></li>
+						<li><a href=""><img src="img/1.png" alt="" width=190 height=107></a><span>国杜维埃的第一家精品店</span></li>
+					</ul>
+				</div>
+				<a href="javascript:;" class="v_prev" id="v_prev"></a>
+				<a href="javascript:;" class="v_next" id="v_next"></a>
+			</div>
+		</div>
+
+	</div><!--viewport-->
+	<div class="footer" id="footer">
+		<div class="nav_bar">
+			<div class="nav_top">
+				<a href="#" class="arrow"></a>
+				<div class="nav_body">
+					<ul class="nav_body_ul">
+						<li class="lrd"><a href="#" class="close">返回上页</a></li>
+						<li><a href="#" class="search">搜索博主</a></li>
+						<li><a href="#" class="eye">关注博主</a></li>
+						<li><a href="#" class="mark">博主清单</a></li>
+						<li class="rrd"><a href="#" class="hot">自我推荐</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="nav_hot">
+				<a href="#" class="close"></a>
+				<input type="text" value="" placeholder="请输入内容">
+				<a href="#" class="submit">提 交</a>
+			</div>	
+			<div class="nav_search">
+				<a href="#" class="close"></a>
+				<input id="search_text" type="text" value="" placeholder="请输入内容">
+				<div class="select">
+					<a href="#" class="value"  id="select_1">内 容</a>
+					<ul id="select_ul" class="dn">
+						<li><a href="#">达人库</a></li>
+						<li><a href="#">图库</a></li>
+						<li><a href="#">其他</a></li>
+					</ul>
+				</div>
+				<a href="#" class="submit">搜 索</a>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+
+
+	$(document).ready(function(){
+		OL_blogger.setViewportHeight();
+		$("#video_slide").scrollable({vertical:true,prev:"#v_prev",next:"#v_next",original:1}).scrollbar({bar:"#scroll"})
+		OL_blogger.btnInit();
+	})
+	window.onresize = function(){OL_blogger.setViewportHeight();}
+	</script>
+</body>
+</html>

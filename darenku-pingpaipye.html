@@ -1,0 +1,666 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>品牌页</title>
+	<link rel="stylesheet" href="http://new-icon.ol-img.com/article/common/css/init.css" MIME-type="text/css"/>
+	<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
+	<script src="js/mousewheel.js"></script>
+	<script src="js/scrollable.js"></script>
+	<script src="js/scrollable.navigator.js"></script>
+	<script src="js/scrollbar.js"></script>
+	<script src="js/blogger.js"></script>
+	<script src="js/common.js"></script>
+	<link rel="stylesheet" href="css/common.css" MIME-type="text/css">
+	<style>
+
+	.doc{width: 100%;position: relative;background-color: #f2f2f2;}
+	.doc_head{width: 270px;position: absolute;top: 10px;left: 10px;}
+	.doc_content{margin-left:290px;top:10px;position: relative;height:97%;overflow-y: scroll;max-width: 1217px;}
+	.column{float: left;}
+	.items{margin: 10px;}
+
+	.doc_pl_c2::-webkit-scrollbar,.doc_content::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+		background-color:transparent;
+	}
+	.doc_pl_c2::-webkit-scrollbar-track,.doc_content::-webkit-scrollbar-track {
+		background-color:#transparent;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+		margin: 2px 0;
+	}
+	.doc_pl_c2::-webkit-scrollbar-track:hover,.doc_content::-webkit-scrollbar-track:hover {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+		background-color:#fefefe;
+	}
+	.doc_pl_c2::-webkit-scrollbar-track:active,.doc_content::-webkit-scrollbar-track:active {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+		background-color:#f0f0f0;
+	}
+	.doc_pl_c2::-webkit-scrollbar-thumb,.doc_content::-webkit-scrollbar-thumb {
+		background-color: #c7c6c6;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+	}
+	.doc_pl_c2::-webkit-scrollbar-thumb:hover, .doc_content::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(0,0,0,0.4);
+		-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+	}
+	.doc_pl_c2::-webkit-scrollbar-thumb:active,.doc_content::-webkit-scrollbar-thumb:active {
+		background: rgba(0,0,0,0.6);
+	}
+	.doc_pl_c2::-webkit-scrollbar-button:start:decrement,.doc_content::-webkit-scrollbar-button:start:decrement
+	{
+		height:8px;
+		border: 4px solid transparent;
+		border-bottom:8px solid #555;
+	}
+	.doc_pl_c2::-webkit-scrollbar-button:end:increment, .doc_content::-webkit-scrollbar-button:end:increment {
+		height:8px;
+		border: 4px solid transparent;
+		border-top:10px solid #555;
+	}
+	.h_photo{
+		width: 270px;
+		height: 270px;
+		position: relative;
+	}
+
+	.f_brand{
+		width: 270px;
+		height: 270px;
+		background: #c0c0c0;
+		margin-top:10px;
+	}
+	.blogger_summary {
+		position: absolute;
+		left:0;
+		bottom: 0;
+		width: 100%;
+		height: 40px;
+		background: rgba(224,182,0,0.7);
+		font: 700 16px/40px microsoft yahei;
+		color: #333;
+		text-indent: 10px;
+	}
+	.icon_follow {
+		background: url(./img/icon24.png) no-repeat -35px 0;
+	}
+	.icon_contact {
+		background: url(./img/icon24.png) no-repeat 0 0;
+	}
+	.blogger_summary span{float: left}
+	.icon_follow, .icon_contact {
+		display:inline;
+		display:inline-block;
+		float: right;
+		width: 35px;
+		height: 35px;
+		margin: 2px;
+	}
+	.f_brand_dl dt{
+		font-size: 20px;
+		color: #bababa;
+		background: #000;
+		text-indent: 17px;
+		margin-bottom:14px;
+	}
+	.f_brand_dl dd{
+		font-size: 14px;
+		text-indent: 17px;
+		margin-bottom: 15px;
+	}
+	.f_brand_dl dd a{
+		color: #000;
+	}
+	.f_brand_dl dd em{
+		padding: 1px 5px 1px 5px;
+		background: #666;
+		color: #fff;
+		margin-right: 9px;
+		font-size: 12px;
+	}
+	.f_brand_dl dd.on em{
+		background: #000;
+	}
+	.f_num{
+		color: #565656;
+		text-indent: 12px;
+		line-height: 40px;
+		font-size: 14px;
+	}
+	.doc_text h1{
+		color: #555;
+		font-size: 26px;
+	}
+	.doc_text{
+		line-height: 1.6;
+		font-size: 14px;
+		overflow-y: scroll;
+		height: 100%;
+		float: left;
+		width: 600px;
+	}
+	.doc_text p{
+		margin-bottom: 23px;
+	}
+	.footer{
+		height:20px;
+	}
+/*	
+	.photo_head h1{float: right;position:relative;width: 180px;height: 550px;background: url(img/photo_header.png) no-repeat 0 0;margin-right: 10px;}
+	.photo_head h1 span{position: absolute;top:120px;left:6px;font:22px microsoft yahei;color: #FFFFFF;}*/
+	.photo_hignlight{float: left;margin:10px 0 10px 10px;overflow: hidden;position: relative;}
+	.photo_hignlight li{float:left;overflow: hidden;-webkit-transition: width .2s ease-in-out;-moz-transition: width .2s ease-in-out;-o-transition: width .2s ease-in-out;-ms-transition: width .2s ease-in-out;transition: width .2s ease-in-out;}
+	
+	.doc_text::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+		background-color:#fff;
+	}
+	.doc_text::-webkit-scrollbar-track {
+		background-color:#fff;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+		margin: 2px 0;
+	}
+	.doc_text::-webkit-scrollbar-track:hover {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+		background-color:#fefefe;
+	}
+	.doc_text::-webkit-scrollbar-track:active {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+		background-color:#f0f0f0;
+	}
+	.doc_text::-webkit-scrollbar-thumb {
+		background-color: #c7c6c6;
+		border-radius: 10px;
+		-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1);
+		
+	}
+	.doc_text::-webkit-scrollbar-thumb:hover {
+		background-color: rgba(0,0,0,0.4);
+		-webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1)
+	}
+	.doc_text::-webkit-scrollbar-thumb:active {
+		background: rgba(0,0,0,0.6)
+	}
+	.doc_text::-webkit-scrollbar-button:start:decrement
+	{
+		height:8px;
+		border: 4px solid transparent;
+		border-bottom:8px solid #555;
+	}
+	.doc_text::-webkit-scrollbar-button:end:increment {
+		height:8px;
+		border: 5px solid transparent;
+		border-top:10px solid #555;
+	}
+	.brand_list{
+		}
+		.brand_list a,.brand_detail_dl dt{
+			font-family: arial;
+			font-size: 19px;
+			color: #000;
+			border: 1px solid #000;
+			display: inline-block;
+			width: 23px;
+			text-align: center;
+			height: 23px;
+			margin-bottom: 10px;
+			line-height: 25px;	
+		}
+
+		.brand_list a:hover,.brand_detail_dl dt{
+			color: #fff;
+			background: #000;
+			text-decoration: none;
+		}
+		.brand_detail_dl dt{
+			text-align: left;
+			line-height: 49px;
+			text-indent: 3px;
+			display: block;
+			margin-bottom: 18px;
+			width: 38px;
+			height: 38px;
+			font-size: 30px;
+		}
+		.brand_detail_dl dt a{
+			color: #fff;
+		}
+		.brand_detail_dl{
+			overflow: hidden;
+			zoom:1;
+		}
+		.brand_detail_dl dd{
+			float: left;
+			width: 379px;
+			font-size: 14px;
+			height: 52px;
+		}
+		.brand_detail_dl .l_dd{
+			height: 39px;
+		}
+		.brand_detail_dl dd a{
+			color: #000;
+		}
+		.return{
+			position: fixed;
+			bottom: 60px;
+			left: 957px;
+			width: 73px;
+			height: 30px;
+			background: #e3e3e3;
+			color: #000;
+			line-height: 30px;
+			text-align: center;
+		}
+		.return:hover{
+			background: #000;
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="header" id="header">
+		<div class="logo"><img src="img/logo.png" alt="" width=400 height=60></div>
+		<div class="nav">
+			<ul class="nav_l">
+				<li><a href="" class="nav_beau">美容</a></li>
+				<li><a href="" class="nav_fash">时尚</a></li>
+				<li><a href="" class="nav_life">生活</a></li>
+			</ul>
+			<div class="nav_brand" id="nav_brand">
+				<a href="" class="nav_brand_e">品牌</a>
+				<div class="nav_brand_c"><a target="_blank" href="http://hzp.onlylady.com/neutrogena/">露得清</a><a target="_blank" href="http://hzp.onlylady.com/lorealparis/">巴黎欧莱雅</a><a target="_blank" href="http://hzp.onlylady.com/esteelauder/">雅诗兰黛</a><a target="_blank" href="http://hzp.onlylady.com/biotherm/">碧欧泉</a><a target="_blank" href="http://hzp.onlylady.com/chanel/">香奈儿</a></div>
+			</div>
+		</div>
+		<div class="login">
+			<a href="">登陆</a> | <a href="">注册</a>
+		</div>
+	</div>
+	<div class="doc">
+		<div class="doc_head">
+			<div class="h_photo">
+				<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+				<div class="blogger_summary">
+					<span>范冰冰 BingBingFan</span>
+					<a href="javascript:;" class="icon_follow"></a>
+					<a href="javascript:;" class="icon_contact" id="contact" rel="#contact_form"></a>
+				</div>
+			</div>
+			<div class="f_brand">
+				<div class="f_num">共关注了162个品牌</div>
+				<dl class="f_brand_dl">
+					<dt>最受关注的TOP5品牌</dt>
+					<dd class="on"><em>1</em><a href="#">香奈儿 CHANEL</a></dd>
+					<dd><em>2</em><a href="#">巴黎欧莱雅 L'OREAL PARIS</a></dd>
+					<dd><em>3</em><a href="#">娇兰 GUERLAIN</a></dd>
+					<dd><em>4</em><a href="#">雅诗兰黛 ESTEE LAUDER</a></dd>
+					<dd><em>5</em><a href="#">安娜苏  ANNA SU</a></dd>
+				</dl>
+			</div>
+		</div>
+		<div class="doc_content">
+			<div class="brand_list">
+				<a href="#A" class="cc">A</a>
+				<a href="#B">B</a>	
+				<a href="#C">C</a>	
+				<a href="#D">D</a>	
+				<a href="#E">E</a>	
+				<a href="#F">F</a>	
+				<a href="#G">G</a>	
+				<a href="#H">H</a>	
+				<a href="#I">I</a>	
+				<a href="#J">J</a>	
+				<a href="#K">K</a>	
+				<a href="#L">L</a>	
+				<a href="#M">M</a>	
+				<a href="#N">N</a>	
+				<a href="#O">O</a>	
+				<a href="#P">P</a>	
+				<a href="#Q">Q</a>	
+				<a href="#R">R</a>	
+				<a href="#S">S</a>	
+				<a href="#T">T</a>	
+				<a href="#U">U</a>	
+				<a href="#V">V</a>	
+				<a href="#W">W</a>	
+				<a href="#X">X</a>	
+				<a href="#Y">Y</a>	
+				<a href="#Z">Z</a>	
+			</div>	
+			<div class="brand_detail">
+				<a href="#" class="return">返回顶部</a>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="A" id="A">A</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="B">B</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="C">C</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="D">D</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="E">E</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="F">F</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="G">G</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="H">H</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="I">I</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="J">J</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="K">K</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="L">L</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="M">M</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="N">N</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="O">O</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="P">P</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="Q">Q</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="R">R</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="S">S</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="T">T</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="U">U</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="V">V</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="W">W</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="X">X</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="Y">Y</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+				<dl class="brand_detail_dl">
+					<dt><a href="#" name="Z">Z</a></dt>
+					<dd><a href="#">安娜苏(ANNA SUI) </a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+					<dd><a href="#">安利(Amway) </a></dd>
+					<dd><a href="#">阿迪达斯(Adidas) </a></dd>
+					<dd class="l_dd"><a href="#">阿玛尼(GIORGIO ARMANI)</a></dd>
+				</dl>
+			</div>
+		</div><!--doc content-->
+	</div><!--doc-->
+	<div class="footer" id="footer">
+		<div class="nav_bar">
+			<div class="nav_top">
+				<a href="#" class="arrow"></a>
+				<div class="nav_body">
+					<ul class="nav_body_ul">
+						<li class="lrd"><a href="#" class="close">返回上页</a></li>
+						<li><a href="#" class="search">搜索博主</a></li>
+						<li><a href="#" class="eye">关注博主</a></li>
+						<li><a href="#" class="mark">博主清单</a></li>
+						<li class="rrd"><a href="#" class="hot">自我推荐</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="nav_hot">
+				<a href="#" class="close"></a>
+				<input type="text" value="" placeholder="请输入内容">
+				<a href="#" class="submit">提 交</a>
+			</div>	
+			<div class="nav_search">
+				<a href="#" class="close"></a>
+				<input id="search_text" type="text" value="" placeholder="请输入内容">
+				<div class="select">
+					<a href="#" class="value"  id="select_1">内 容</a>
+					<ul id="select_ul" class="dn">
+						<li><a href="#">达人库</a></li>
+						<li><a href="#">图库</a></li>
+						<li><a href="#">其他</a></li>
+					</ul>
+				</div>
+				<a href="#" class="submit">搜 索</a>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		OL_blogger.setViewportHeight(".doc");
+		OL_blogger.setViewportWidth(".doc_content",290);
+		OL_blogger.btnInit();
+		var cChar=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+		$(".brand_list a").bind("click",function(){
+			var n=$(this).index();
+			var top=$("a[name='"+cChar[n]+"']").offset().top;
+			top-=78;
+			$(".doc_content").animate(
+				{
+					scrollTop:top
+				}
+			,800)
+			return false;
+		})
+		$(".return").bind("click",function(){
+			$(".doc_content").animate(
+				{
+					scrollTop:0
+				}
+			,500)
+			return false;
+		})
+	})
+	window.onresize = function(){OL_blogger.setViewportHeight(".doc");}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>charAt</title>
+			<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
+
+</head>
+<body>
+	<div >
+		元字符串：ccddeeffgg
+	</div>
+	<div>
+		string.slice(n,m)<br/>
+		slice后字符串
+	</div>
+	<div id="t1">
+		
+	</div>	
+	first<select name="" id="a1" class="cc">
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+	</select>
+	end<select name="" id="a2" class="cc">
+		<option value="0">0</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option>
+		<option value="8">8</option>
+		<option value="9">9</option>
+	</select>
+</body>
+	<script>
+		var abc="ccddeeffgg";
+		function change(n,m){
+			var dd=abc.slice(n,m);		
+			$("#t1").html(dd);
+		}
+		$(".cc").bind("change",function(){
+			var n=($("#a1 option:checked").attr("value"));
+			var m=($("#a2 option:checked").attr("value"));
+			change(n,m)
+		})
+	
+	</script>
+</html>

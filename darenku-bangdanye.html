@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>达人榜单页</title>
+	<link rel="stylesheet" href="http://new-icon.ol-img.com/article/common/css/init.css" />
+	<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
+	<script src="js/mousewheel.js"></script>
+	<script src="js/scrollable.js"></script>
+	<script src="js/scrollable.navigator.js"></script>
+	<script src="js/scrollbar.js"></script>
+	<script src="js/expose.js"></script>
+	<script src="js/overlay.js"></script>
+	<script src="js/blogger_new.js"></script>
+	<link rel="stylesheet" href="css/common.css">	
+	<link rel="stylesheet" href="css/column.css">
+	<style type="text/css">
+		.item_s1{float:left;color:#FFF;position:relative;margin:5px;}
+		.bg_l{background:#21799f;color:#c0e6f6;}
+		.bg_h{background:#dfb519;color:#fff5d0;}
+		.bg_f{background:#ef9fa2;color:#ffe5e6;}
+		.bg_l,.bg_h,.bg_f{box-sizing:border-box;padding:3%;}
+		.item_s1_dl dt{font-size:16px;margin-bottom:9px;color:#FFF;}
+		.item_s1_dl dd{margin-top:7px;}
+		.item_s1_b{width:100%;text-align:right;position:absolute;right:5%;bottom:5%;}
+		.item_s1_b a{display:inline-block;width:20px;height:20px;text-align:center;}
+		.doc_content{overflow:hidden;width:100%;background:#fff;}
+		.column_1,.column,.column_2{float:left;}
+		.items{position:relative;margin:0;}
+		.footer{background:url(./img/bd_bottom.png) repeat;}
+		.viewport{margin:0px 10px 0px 5px;}
+		.column,.column_1,.column_2,.column_3{margin-top:5px;}
+		.item_s1,.item_s2,.item_s3{float:left;position:relative;}
+		.wall{width:2000em;}
+		.c1_l,.c1_r{float:left;height:102px;background:#fff;position:relative;width:50%;}
+		.c1_l h2 a,.c1_r h2 a{font-size:20px;padding-top:63px;background:url(./img/bd_text.png) no-repeat;display:inline-block;width:100%;height:100%;color:#000;margin:8px 0 0 5px;}
+		.c1 .on a{color:#fff;}
+		.c1_r h2 a{background-position:0 -156px;}
+		.c1{margin:10px 10px 0px;}
+		.c1 .arrow{position:absolute;bottom:5px;right:30px;display:inline-block;width:42px;height:42px;}
+		.c1 .on{background:#000;color:#fff;}
+		.c1_l.on .arrow{background:url(./img/icon24.png) -138px -185px;}
+		.c1_l .arrow{background:url(./img/icon24.png) -138px -144px;}
+		.c1_r.on .arrow{background:url(./img/icon24.png) -185px -185px;}
+		.c1_r .arrow{background:url(./img/icon24.png) -185px -144px;}
+		.c1 .off{background:url(./img/dot.png);}
+		.c1_c{width:100%;height:29px;clear:both;background:#000;color:#fff;text-indent:15px;line-height:30px;}
+		.item_h{background:url(./img/bd_video.png) center no-repeat #e1b600;}
+		.item_f{background:url(./img/bd_lv.png) center no-repeat #ef9fa2;}
+		.item_f span{position:absolute;left:43%;top:45%;font-size:20px;}
+		.item_h h2,.item_f h2{color:#FFF;font-size:14px;position:absolute;bottom:6px;text-indent:8px;}
+		.item_bottom{height:10%;width:100%;background:#000;color:#fff;opacity:.8;filter:alpha(opacity=80);position:absolute;bottom:0;text-align:center;-webkit-text-size-adjust:none;font-size:10px;}
+		.item_bottom span{display:inline-block;height:100%;width:1px;vertical-align:middle;}
+		.item_s2 .items_summary{background:#e1b600;height:30px;}
+		.item_s2 .items_summary h2{text-align:left;font-size:14px;color:#000;line-height:30px;text-indent:12px;}
+		.item_s2 .items_summary a{float:right;width:31px;height:30px;background:url(./img/icon24.png);margin-right:7px;}
+		.item_s2 .items_summary .icon_bcontent{background-position:-4px -2px;width:27px;}
+		.item_s2 .items_summary .icon_bfollow{background-position:-37px -2px;}
+		.item_s2,.item_s3{margin:5px;}
+	</style>
+	</head>
+	<body>
+	<div class="header" id="header">
+		<div class="logo"><img src="img/logo.png" alt="" width=400 height=60></div>
+		<div class="nav">
+			<ul class="nav_l">
+				<li><a href="" class="nav_beau">美容</a></li>
+				<li><a href="" class="nav_fash">时尚</a></li>
+				<li><a href="" class="nav_life">生活</a></li>
+			</ul>
+			<div class="nav_brand" id="nav_brand">
+				<a href="" class="nav_brand_e">品牌</a>
+				<div class="nav_brand_c"><a target="_blank" href="http://hzp.onlylady.com/neutrogena/">露得清</a><a target="_blank" href="http://hzp.onlylady.com/lorealparis/">巴黎欧莱雅</a><a target="_blank" href="http://hzp.onlylady.com/esteelauder/">雅诗兰黛</a><a target="_blank" href="http://hzp.onlylady.com/biotherm/">碧欧泉</a><a target="_blank" href="http://hzp.onlylady.com/chanel/">香奈儿</a></div>
+			</div>
+		</div>
+		<div class="login">
+			<a href="">登陆</a> | <a href="">注册</a>
+		</div>
+	</div>
+	<div class="doc_content">
+		<div class="c1">
+			<div class='c1_l on'>
+				<h2><a href="darenku-bangdanye.html">美容最受瞩目达人</a></h2>	
+				<a href="#" class="arrow"></a>
+			</div>
+			<div class='c1_r off'>
+				<h2><a href="darenku-bangdanye_fashion.html">时尚最受瞩目达人</a></h2>
+				<a href="#" class="arrow"></a>
+			</div>
+			<div class="c1_c">
+				相关的解释性文字等相关的解释性文字等相关的解释性文字等相关的解释性文字等相关的解释性文字等相关的解释性文字等
+			</div>
+		</div>
+		<div class="viewport" id="viewport">
+			<div class="wall" id="wall">
+				<div class="column_1">
+					<div class="item_s2">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+						<div class="items_summary">
+							<h2>白雯 · Bingbing Fan
+								<a href="#" class="icon_bfollow"></a>
+								<a href="#" class="icon_bcontent"></a>
+							</h2>
+						</div>
+					</div>
+					<div class="item_s1 item_h">
+						<h2>视频</h2>
+					</div>
+					<div class="item_s1 item_f">
+						<!-- <span>21</span> -->
+						<h2>积分等级</h2>
+					</div>
+				</div>
+				<div class="column_2">
+					<div class="item_s3">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+						<div class="items_summary">
+							自打有了微博，博客便很少更新
+							<span></span>
+						</div>
+					</div>
+					<div class="item_s3">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+						<div class="items_summary">
+							自打有了微博，博客便很少更新
+							<span></span>
+						</div>
+					</div>
+					<div class="item_s3">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+						<div class="items_summary">
+							自打有了微博，博客便很少更新
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+						<div class="items_summary">
+							小蛮
+							<span></span>
+						</div>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+						<div class="items_summary">
+							小蛮
+							<span></span>
+						</div>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+						<div class="items_summary">
+							小蛮
+							<span></span>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+					</div>
+				</div>
+				<div class="column">
+					<div class="item_s1">
+						<a href=""><img src="img/1.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/2.png" alt="" width="100%" height="100%"></a>
+					</div>
+					<div class="item_s1 ">
+						<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+					</div>
+				</div>
+			</div><!--wall-->
+		</div><!--iewport-->
+	</div><!--doc content-->
+	<div class="footer" id="footer">
+		<div class="navigator" id="navigator">
+			<div class="scroll" id="scroll">
+				<div class="scrollbar"></div>
+			</div>
+		</div>
+		<div class="nav_bar">
+			<div class="nav_top">
+				<a href="#" class="arrow"></a>
+				<div class="nav_body">
+					<ul class="nav_body_ul">
+						<li class="lrd"><a href="#" class="close">返回上页</a></li>
+						<li><a href="#" class="search">搜索博主</a></li>
+						<li><a href="#" class="eye">关注博主</a></li>
+						<li><a href="#" class="mark">博主清单</a></li>
+						<li class="rrd"><a href="#" class="hot">自我推荐</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="nav_hot">
+				<a href="#" class="close"></a>
+				<input type="text" value="" placeholder="请输入内容">
+				<a href="#" class="submit">提 交</a>
+			</div>	
+			<div class="nav_search">
+				<a href="#" class="close"></a>
+				<input id="search_text" type="text" value="" placeholder="请输入内容">
+				<div class="select">
+					<a href="#" class="value"  id="select_1">内 容</a>
+					<ul id="select_ul" class="dn">
+						<li><a href="#">达人库</a></li>
+						<li><a href="#">图库</a></li>
+						<li><a href="#">其他</a></li>
+					</ul>
+				</div>
+				<a href="#" class="submit">搜 索</a>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	var my_arg={
+		coloum1:{
+			dFrame:".viewport",//外框的宽度高度
+			dMargin:-1,//大框的高度调整margin
+			top:140,
+			bottom:0,
+			size:3,
+			row:1,
+			line:1,
+			margin:10,
+			dItemName:".item_s1",
+			dItemColumn:".column",
+			square:true
+		},
+		coloum2:{
+			size:3,
+			row:2,
+			line:1,
+			margin:10,
+			dItemName:".item_s2",
+			dItemColumn:".column_1",
+			square:true
+		},
+		coloum3:{
+			size:3,
+			row:2,
+			line:1,
+			margin:10,
+			dItemName:".item_s3",
+			dItemColumn:".column_2",
+			square:false
+		},
+	}
+	$(document).ready(function(){
+		// var n=$(".items a img").length;
+		// for(var i=0 ;i<n;i++){
+		// 	if(i%2==0){
+		// 		// $(".items a img").eq(i).attr("src","img/1.png");
+		// 	}else{
+		// 		$(".items a img").eq(i).attr("src","img/b.jpg");
+		// 	}
+		// }
+		OL_blogger.My_set(my_arg);
+		// OL_blogger.lSetrow();
+		// OL_blogger.showHide();
+
+		//check broswer
+		var adv = jQuery.support.leadingWhitespace;
+		if(!adv) alert("您的浏览器版本过低,这可能会影响到您的体验")
+
+		$("#viewport").scrollable({mousewheel:true,size:4}).scrollbar({bar:"#scroll"});
+		OL_blogger.btnInit();
+	})
+	window.onresize = function(){OL_blogger.My_set(my_arg);}
+	$("#f_c_top").bind({
+		click:function(){
+			$(".f_c_b dd").slideToggle("fast",function(){
+				$(this).css("display")=="none"?$("#f_c_top").text("向下"):$("#f_c_top").text("向上");
+			});
+		}
+	})
+
+	</script>
+</body>
+</html>

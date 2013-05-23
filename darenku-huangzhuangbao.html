@@ -1,0 +1,526 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>达人化妆包</title>
+	<link rel="stylesheet" href="http://new-icon.ol-img.com/article/common/css/init.css" />
+	<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
+	<script src="js/mousewheel.js"></script>
+	<script src="js/scrollable.js"></script>
+	<script src="js/scrollable.navigator.js"></script>
+	<script src="js/scrollbar.js"></script>
+	<script src="js/expose.js"></script>
+	<script src="js/overlay.js"></script>
+	<script src="js/blogger_new.js"></script>
+	<link rel="stylesheet" href="css/common.css">
+	<style type="text/css">
+	.f_c_b{float:right;width:180px;padding-bottom:1px;margin:0 10px;}
+	.f_c_b dt{font-size:14px;height:27px;line-height:27px;text-indent:12px;background:#ef9fa2;border-bottom:8px solid #f9d9da;}
+	.f_c_b dd{line-height:24px;background:#fff;opacity:0.6;padding:5px 12px 0;}
+	.f_c_b dd em{font-weight:bolder;}
+	.viewport{box-sizing:border-box;margin:10px 0 0 0;border:5px solid #ef9fa2;"}
+	.doc_head{clear:both;float:left;width:20%;}
+	.item-title{position:absolute;right:-169px;top:6px;width:203px;height:89px;z-index:999;border:1px solid #000;font-size:1em;border-radius:3px;box-shadow:2px 2px 2px #333030;display:none;}
+	.item-title h4{height:30%;background:#000;color:#fff;border-radius:3px 3px 0 0;font-size:14px;line-height:168%;text-indent:13px;}
+	.item-title p{height:70%;color:#000;border-radius:0 0 3px 3px;overflow:hidden;line-height:22px;box-sizing:border-box;background:url(./img/icon24.png) -204px 10px #fff no-repeat;padding:5% 5% 5% 27px;}
+	.item-title em{position:absolute;top:5px;left:-16px;display:inline-block;width:0;height:0;border:5px solid transparent;border-right:10px solid #000;}
+	.last_column .item-title{
+		left: -169px;
+	}
+	.last_column .item-title em{
+		border:5px solid transparent;
+		border-left: 10px solid #000;
+		left: 204px;
+		top:5px;
+	}
+	.mask{position:absolute;top:0;width:100%;height:100%;background:#ccc;z-index:1;opacity:0.9;}
+	.head_column{background:#ef9fa2 url(./img/mao.png) no-repeat 0 0;}
+	.head_column h1{font:22px/22px microsoft yahei;}
+	.head_column span{font-size:13px;}
+	.items a:hover img{opacity:1;}
+	.f_c_c{background:#ef9fa2;height:15px;float:right;width:180px;position:relative;margin:0 10px;}
+	.f_c_c a{position:absolute;width:25px;height:24px;right:10px;bottom:6px;background:url(./img/icon24.png) -81px -6px;color:#FFF;}
+	.column{float:left;}
+	.items{position:relative;margin:0;}
+	.doc{width:100%;height:100%;}
+	.doc_content{overflow:hidden;width:80%;margin-bottom: 10px;}
+	.dress_head .head_column{float:right;width:160px;min-height:40px;color:#FFF;font:22px/20px microsoft yahei;margin:10px;padding:130px 10px 5px;}
+	.footer{}
+	</style>
+</head>
+<body>
+	<div class="header" id="header">
+		<div class="logo"><img src="img/logo.png" alt="" width=400 height=60></div>
+		<div class="nav">
+			<ul class="nav_l">
+				<li><a href="" class="nav_beau">美容</a></li>
+				<li><a href="" class="nav_fash">时尚</a></li>
+				<li><a href="" class="nav_life">生活</a></li>
+			</ul>
+			<div class="nav_brand" id="nav_brand">
+				<a href="" class="nav_brand_e">品牌</a>
+				<div class="nav_brand_c"><a target="_blank" href="http://hzp.onlylady.com/neutrogena/">露得清</a><a target="_blank" href="http://hzp.onlylady.com/lorealparis/">巴黎欧莱雅</a><a target="_blank" href="http://hzp.onlylady.com/esteelauder/">雅诗兰黛</a><a target="_blank" href="http://hzp.onlylady.com/biotherm/">碧欧泉</a><a target="_blank" href="http://hzp.onlylady.com/chanel/">香奈儿</a></div>
+			</div>
+		</div>
+		<div class="login">
+			<a href="">登陆</a> | <a href="">注册</a>
+		</div>
+	</div>
+	<div class="doc" style="background:url(http://olbpic.ol-img.com/album/201212/03/111928ixdnocjogqvqnooq.jpg) 0 0;">
+		<div class="doc_head dress_head">
+			<div class="head_column">
+				<h1>大蚊子</h1>
+				<span>的化妆包</span>
+			</div>
+			<dl class="f_c_b">
+				<dt>我的化妆顺序是</dt>
+				<dd><em>上妆：</em>洁面（洗面奶）－爽肤水（保湿或美白）－眼霜（保湿或抗皱）－精华（保湿或控油或抗皱）－
+润肤霜或乳液（早霜、晚霜分着用或只用一种）－隔离霜（早上用）－防晒霜（早上用）.</dd>
+				<dd><em>卸妆：</em>洁面－爽肤水－眼霜－精华或肌底液－润肤霜或乳液－隔离霜（早上用）－防晒霜（早上用）。</dd>
+			</dl>
+			<div class="f_c_c">
+				<a href="#" id="f_c_top"></a>
+			</div>
+		</div>
+		<div class="doc_content">
+			<div class="viewport" id="viewport">
+				<div class="wall" id="wall">
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+					<div class="column">
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+						<div class="items">
+							<div class="mask"></div>
+							<a href=""><img src="img/3.png" alt="" width="100%" height="100%"></a>
+							<div class="item-title">
+								<em></em>
+								<h4>安娜苏水精灵保湿霜</h4>
+								<p>她们家的东西造型都很特别，是女孩子钟爱的款。</p>
+							</div>
+						</div>
+					</div>
+				</div><!--wall-->
+			</div><!--viewport-->
+		</div><!--doc content-->
+	</div><!--doc-->
+	<div class="footer" id="footer">
+		<div class="navigator" id="navigator">
+			<div class="scroll" id="scroll">
+				<div class="scrollbar"></div>
+			</div>
+		</div>
+		<div class="nav_bar">
+			<div class="nav_top">
+				<a href="#" class="arrow"></a>
+				<div class="nav_body">
+					<ul class="nav_body_ul">
+						<li class="lrd"><a href="#" class="close">返回上页</a></li>
+						<li><a href="#" class="search">搜索博主</a></li>
+						<li><a href="#" class="eye">关注博主</a></li>
+						<li><a href="#" class="mark">博主清单</a></li>
+						<li class="rrd"><a href="#" class="hot">自我推荐</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="nav_hot">
+				<a href="#" class="close"></a>
+				<input type="text" value="" placeholder="请输入内容">
+				<a href="#" class="submit">提 交</a>
+			</div>	
+			<div class="nav_search">
+				<a href="#" class="close"></a>
+				<input id="search_text" type="text" value="" placeholder="请输入内容">
+				<div class="select">
+					<a href="#" class="value"  id="select_1">内 容</a>
+					<ul id="select_ul" class="dn">
+						<li><a href="#">达人库</a></li>
+						<li><a href="#">图库</a></li>
+						<li><a href="#">其他</a></li>
+					</ul>
+				</div>
+				<a href="#" class="submit">搜 索</a>
+			</div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+	var my_arg={
+		coloum1:{
+			dFrame:".viewport",//外框的宽度高度
+			dMargin:0,//大框的高度调整margin
+			top:10,
+			bottom:10,
+			size:3,
+			row:1,
+			line:1,
+			margin:0,
+			borderWidth:10,
+			dItemName:".items",
+			dItemColumn:".column",
+			square:true
+		}
+	}
+
+	$(document).ready(function(){
+		var n=$(".items a img").length;
+		for(var i=0 ;i<n;i++){
+			if(i%2==0){
+				// $(".items a img").eq(i).attr("src","img/a.jpg");
+			}else{
+				$(".items a img").eq(i).attr("src","img/1.png");
+			}
+		}
+		OL_blogger.My_set(my_arg);
+		OL_blogger.showHide();
+		//check broswer
+		var adv = jQuery.support.leadingWhitespace;
+		if(!adv) alert("您的浏览器版本过低,这可能会影响到您的体验")
+
+		$("#viewport").scrollable({mousewheel:true,size:4}).scrollbar({bar:"#scroll"});
+		$(".column").eq($(".column").length-1).addClass("last_column");
+		OL_blogger.btnInit();
+	})
+	window.onresize = function(){OL_blogger.My_set(my_arg);}
+	$("#f_c_top").bind({
+		click:function(){
+			$(".f_c_b dd").slideToggle("fast",function(){
+			});
+		}
+	})
+	
+	</script>
+</body>
+</html>

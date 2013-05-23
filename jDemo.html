@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Jdemo</title>
+		<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
+
+	<style>
+		*{
+			margin: 0;
+			padding:0;
+		}
+		.top{
+			height: 30px;
+			background: #ffeeff;
+		}
+		.footer{
+			height: 20px;
+			background: #aaeecc;
+		}
+		.item_s1,.item_s2,.item_s3,.item_s4,.item_s5{
+			background: #eeaabb;
+			margin:5px;
+			float: left;
+		}
+		.item_s4{
+			margin: 0;
+		}
+		.coloum1,.coloum2,.coloum3,.coloum4,.coloum5{
+			float: left;
+			margin-top: 5px;
+		}
+		.coloum4{
+			margin-top: 10px;
+		}
+		.body{
+			width: 30000px;
+		}
+		.item_s4{
+			margin: 0;
+		}
+		.bgy{
+			background: yellow;
+		}
+		.bgp{
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="top">
+		
+	</div>
+	<div class="body">
+		<div class="coloum1">
+			<div class="item_s1">
+				
+			</div>
+			<div class="item_s1">
+				
+			</div>
+			<div class="item_s1">
+				
+			</div>
+			<div class="item_s1">
+				
+			</div>
+		</div>
+		<div class="coloum2">
+			<div class="item_s2">
+				
+			</div>
+			<div class="item_s1">
+				
+			</div>
+			<div class="item_s1">
+				
+			</div>
+			<div class="item_s1">
+				
+			</div>
+			<div class="item_s1">
+			</div>
+		</div>
+		<div class="coloum3">
+			<div class="item_s3"></div>
+			<div class="item_s2">
+			</div>
+			<div class="item_s1">
+			</div>
+			<div class="item_s1">
+			</div>
+			<div class="item_s5">
+			</div>
+		</div>
+		<div class="coloum4">
+			<div class="item_s4 bgy"></div>
+			<div class="item_s4 bgp"></div>
+			<div class="item_s4"></div>
+			<div class="item_s4 bgp"></div>
+			<div class="item_s4"></div>
+			<div class="item_s4 bgp"></div>
+			<div class="item_s4"></div>
+			<div class="item_s4 bgp"></div>
+			<div class="item_s4 bgy"></div>
+		</div>
+		<div class="coloum5">
+			<div class="item_s5">
+			</div>
+			<div class="item_s5">
+			</div>
+			<div class="item_s1">
+			</div>
+			<div class="item_s1">
+			</div>
+			<div class="item_s5">
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		
+	</div>
+	<script src="js/blogger_new.js"></script>
+
+	<script type="text/javascript">
+
+	var my_arg={
+		coloum1:{
+			dFrame:".body",//外框的宽度高度
+			dMargin:-17,//大框的高度调整margin
+			top:30,
+			bottom:20,
+			size:4,
+			row:1,
+			line:1,
+			margin:10,
+			dItemName:".item_s1",
+			dItemColumn:".coloum1",
+			square:true
+		},
+		coloum2:{
+			size:4,
+			row:2,
+			line:1,
+			margin:10,
+			dItemName:".item_s2",
+			dItemColumn:".coloum2",
+			square:true
+		},
+		coloum3:{
+			size:2,
+			row:2,
+			line:1,
+			margin:10,
+			dItemName:".item_s3",
+			dItemColumn:".coloum3",
+			square:false
+		},
+		coloum4:{
+			size:3,
+			row:1,
+			line:2,
+			margin:0,
+			dItemName:".item_s4",
+			dItemColumn:".coloum4",
+			square:false,
+			mix:true,
+			nMixMarginBottom:20,
+			nMixNum:3,
+		},
+		coloum5:{
+			size:4,
+			row:2,
+			line:2,
+			margin:10,
+			dItemName:".item_s5",
+			dItemColumn:".coloum5",
+			square:false,
+		}
+	}
+	$(document).ready(function(){
+		OL_blogger.My_set(my_arg);
+		
+	})
+	window.onresize = function(){OL_blogger.My_set(my_arg);}
+	
+	</script>
+</body>
+</html>

@@ -2,12 +2,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>首页</title>
+	<title>达人展示页 - 化妆包</title>
 	<link rel="stylesheet" href="http://new-icon.ol-img.com/article/common/css/init.css" />
 	<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
 	<script src="js/mousewheel.js"></script>
 	<script src="js/scrollable.js"></script>
+	<script src="js/scrollable.navigator.js"></script>
 	<script src="js/scrollbar.js"></script>
+	<script src="js/expose.js"></script>
+	<script src="js/overlay.js"></script>
+	<script src="js/autoFade.js"></script>
 	<script src="js/blogger.js"></script>
 	<script src="js/common.js"></script>
 	<link rel="stylesheet" href="css/common.css">
@@ -34,63 +38,65 @@
 	<div class="viewport" id="viewport">
 		<div class="wall" id="wall">
 			<div class="column">
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-					<div class="items_summary"><em>白文</em> | 年底各种各样的活动接种而来，穿衣记更新的也慢了</div>
-					<div class="share">
-						<p class="from">来自资讯</p>
-						<div class="share_btn">
-							<span>分享</span>
-							<div class="share_btn_list">
-								<a href="http://service.weibo.com/share/share.php?url=&appkey=&ralateUid=&title=&pic=" class="sina_wb" target="_blank">sina</a>
-								<a href="http://v.t.qq.com/share/share.php?url=&appkey=&site=&pic=&title=" class="qq_wb" target="_blank">qq</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-					<div class="items_summary"><em>白文</em> | 年底各种各样的活动接种而来，穿衣记更新的也慢了</div>
-					<div class="share">
-						<p class="from">来自资讯</p>
-						<div class="share_btn">
-							<span>分享</span>
-							<div class="share_btn_list">
-								<a href="http://service.weibo.com/share/share.php?url=&appkey=&ralateUid=&title=&pic=" class="sina_wb" target="_blank">sina</a>
-								<a href="http://v.t.qq.com/share/share.php?url=&appkey=&site=&pic=&title=" class="qq_wb" target="_blank">qq</a>
-							</div>
-						</div>
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+					<div class="blogger_summary">
+						<span>范冰冰 BingBingFan</span>
+						<a href="" class="icon_follow"></a>
+						<a href="" class="icon_contact"></a>
 					</div>
 				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_1">
-							<p>年台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						<div class="items_x2_i follow_bg follow_beauty">
+							<span>23542</span>微博粉丝
 						</div>
-						<div class="items_x2_i items_x2_i_2">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						<div class="items_x2_i">
+							<img src="img/beauty_bg.png" alt="" width=100% height=100%>
 						</div>
 					</div>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				<div class="items items_x1_1">
+					<h3>关注品牌</h3>
+					<div class="brand"><a href="">CLINIQUE</a><a href="">ESTEE</a><a href="">LAUDER</a><a href="">COACH</a><a href="">LAMER</a><a href="">KIEHL'S</a><a href="">CHANEL</a><a href="">GUCCI</a><a href="">DIRO</a><a href="">KOSE</a></div>
 				</div>
 			</div><!--col-1-->
-			<div class="column">
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+			<div class="column_x2">
+				<div class="items_x8">
+					<div class="items_fade">
+						<ul id="items_fade">
+							<li><a href=""><img src="img/2.png" alt="" width=100% height=100%></a></li>
+							<li><a href=""><img src="img/1.png" alt="" width=100% height=100%></a></li>
+						</ul>
+						<div class="items_fade_nav" id="items_fade_nav"></div>
+					</div>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				<div class="items_x4 items_x1_1 blogger_info f_l">
+					<h3>个人档案</h3>
+					<div>姓名：白白   性别：女</div>
+					<div>国籍：美国   现居地：北京 </div>
+					<div>职业：杀手</div>
+					<div>达人领域：时尚、奢侈品、包包</div>
+					<div>主要成就：</div>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				<div class="items_x4 f_r">
+					<div class="items">
+						<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+						<div class="items_summary mypho_bg"><span class="icon_mypho">我的图集</span></div>
+					</div>						
+					<div class="items_x2">
+						<div class="items_x2_c">
+							<div class="items_x2_i">
+								<a href=""><img src="img/video.png" alt="" width=100% height=100%></a>
+							</div>
+							<div class="items_x2_i">
+								<a href=""><img src="img/bag.png" alt="" width=100% height=100%></a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div><!--col-2-->
 			<div class="column">
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
 						<div class="items_x2_i">
@@ -103,92 +109,18 @@
 				</div>	
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_1">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-						<div class="items_x2_i items_x2_i_3">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-					</div>
-				</div>			
-			</div><!--col-3-->
-			<div class="column">
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
-				</div>	
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+					<div class="items_summary"><em>白文</em> | 年底各种各样的活动接种而来，穿衣记更新的也慢了</div>
 				</div>
 				<div class="items_x4">
 					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>			
-			</div><!--col-4-->	
-			<div class="column">
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_3">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-						<div class="items_x2_i items_x2_i_1">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-					</div>
-				</div>	
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>			
-			</div><!--col-5-->	
-			<div class="column">
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>	
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>	
-			</div><!--col-6-->	
-			<div class="column">
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_1">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-						<div class="items_x2_i items_x2_i_2">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-					</div>
-				</div>	
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+					<div class="share">
+						<p class="from">来自资讯</p>
+						<div class="share_btn">
+							<span>分享</span>
+							<div class="share_btn_list">
+								<a href="http://service.weibo.com/share/share.php?url=&appkey=&ralateUid=&title=&pic=" class="sina_wb" target="_blank">sina</a>
+								<a href="http://v.t.qq.com/share/share.php?url=&appkey=&site=&pic=&title=" class="qq_wb" target="_blank">qq</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -197,73 +129,9 @@
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
-				</div>
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>
-			</div><!--col-8-->		
-			<div class="column">
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_2">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-						<div class="items_x2_i items_x2_i_3">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
-					</div>
 				</div>	
-			</div><!--col-9-->		
-			<div class="column">
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>	
-			</div><!--col-10-->		
-			<div class="column">
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
 						<div class="items_x2_i items_x2_i_3">
@@ -273,25 +141,150 @@
 							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
 						</div>
 					</div>
+				</div>	
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>		
+			</div><!--col-4-->	
+			<div class="column">
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
 				</div>
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
-			</div><!--col-11-->				
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+			</div><!--col-5-->	
 			<div class="column">
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>	
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+					</div>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>	
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i items_x2_i_1">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+						<div class="items_x2_i items_x2_i_2">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+					</div>
+				</div>
+			</div><!--col-6-->	
+			<div class="column">
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+					</div>
 				</div>	
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+				</div>
+			</div><!--col-7-->	
+			<div class="column">
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
-			</div><!--col-12-->											
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i items_x2_i_1">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+						<div class="items_x2_i items_x2_i_2">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				
+			</div><!--col-8-->		
+			<div class="column">
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+			</div><!--col-9-->		
+			<div class="column">
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i items_x2_i_1">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+						<div class="items_x2_i items_x2_i_2">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+					</div>
+				</div>
+			</div><!--col-10-->		
+			<div class="column">
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+					</div>
+				</div>
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+				</div>
+			</div><!--col-11-->				
+													
 		</div>
 	</div>
-	
 	<div class="footer" id="footer">
 		<div class="navigator" id="navigator">
 			<div class="scroll" id="scroll">
@@ -332,14 +325,19 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+
+
 	$(document).ready(function(){
 		OL_blogger.setItemsSize();
+
+		
 		$("#viewport").scrollable({mousewheel:true,size:4}).scrollbar({bar:"#scroll"});
+		$("#items_fade").autoFade({nav:'#items_fade_nav',interval:3000});
 		OL_blogger.btnInit();
 	})
-		window.onresize = function(){
-			OL_blogger.setItemsSize();
-		};
+	window.onresize = function(){OL_blogger.setItemsSize()}
+
+
 	</script>
 </body>
 </html>

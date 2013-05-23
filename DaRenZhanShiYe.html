@@ -2,12 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>首页</title>
+	<title>达人展示页</title>
 	<link rel="stylesheet" href="http://new-icon.ol-img.com/article/common/css/init.css" />
 	<script src="http://new-icon.ol-img.com/jslib/jquery-1.7.2.min.js"></script>
 	<script src="js/mousewheel.js"></script>
 	<script src="js/scrollable.js"></script>
+	<script src="js/scrollable.navigator.js"></script>
 	<script src="js/scrollbar.js"></script>
+	<script src="js/expose.js"></script>
+	<script src="js/overlay.js"></script>
 	<script src="js/blogger.js"></script>
 	<script src="js/common.js"></script>
 	<link rel="stylesheet" href="css/common.css">
@@ -34,112 +37,82 @@
 	<div class="viewport" id="viewport">
 		<div class="wall" id="wall">
 			<div class="column">
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-					<div class="items_summary"><em>白文</em> | 年底各种各样的活动接种而来，穿衣记更新的也慢了</div>
-					<div class="share">
-						<p class="from">来自资讯</p>
-						<div class="share_btn">
-							<span>分享</span>
-							<div class="share_btn_list">
-								<a href="http://service.weibo.com/share/share.php?url=&appkey=&ralateUid=&title=&pic=" class="sina_wb" target="_blank">sina</a>
-								<a href="http://v.t.qq.com/share/share.php?url=&appkey=&site=&pic=&title=" class="qq_wb" target="_blank">qq</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-					<div class="items_summary"><em>白文</em> | 年底各种各样的活动接种而来，穿衣记更新的也慢了</div>
-					<div class="share">
-						<p class="from">来自资讯</p>
-						<div class="share_btn">
-							<span>分享</span>
-							<div class="share_btn_list">
-								<a href="http://service.weibo.com/share/share.php?url=&appkey=&ralateUid=&title=&pic=" class="sina_wb" target="_blank">sina</a>
-								<a href="http://v.t.qq.com/share/share.php?url=&appkey=&site=&pic=&title=" class="qq_wb" target="_blank">qq</a>
-							</div>
-						</div>
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+					<div class="blogger_summary">
+						<span>范冰冰 BingBingFan</span>
+						<a href="javascript:;" class="icon_follow"></a>
+						<a href="javascript:;" class="icon_contact" id="contact" rel="#contact_form"></a>
 					</div>
 				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_1">
-							<p>年台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						<div class="items_x2_i items_x2_i_4 follow_bg">
+							<span>23542</span>微博粉丝
 						</div>
+						<div class="items_x2_i">
+							<img src="img/beauty_bg.png" alt="" width=100% height=100%>
+						</div>
+					</div>
+				</div>
+				<div class="items items_x1_1">
+					<h3>关注品牌</h3>
+					<div class="brand"><a href="">CLINIQUE</a><a href="">ESTEE</a><a href="">LAUDER</a><a href="">COACH</a><a href="">LAMER</a><a href="">KIEHL'S</a><a href="">CHANEL</a><a href="">GUCCI</a><a href="">DIRO</a><a href="">KOSE</a></div>
+				</div>
+			</div><!--col-1-->
+			<div class="column">
+				<div class="items_x2">
+					<div class="items_x2_c">
 						<div class="items_x2_i items_x2_i_2">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="" class="detail_btn" rel="#text_detail">[详细]</a></p>
+						</div>
+						<div class="items_x2_i items_x2_i_3">
 							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
 						</div>
 					</div>
 				</div>
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+					<div class="items_summary mypho_bg"><span class="icon_mypho">我的图集</span></div>
 				</div>
-			</div><!--col-1-->
-			<div class="column">
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				<div class="items_x4 items_x1_1 blogger_info">
+					<h3>个人档案</h3>
+					<div>姓名：白白   性别：女</div>
+					<div>国籍：美国   现居地：北京 </div>
+					<div>职业：杀手</div>
+					<div>达人领域：时尚、奢侈品、包包</div>
+					<div>主要成就：</div>
 				</div>
 			</div><!--col-2-->
 			<div class="column">
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+					<div class="items_summary"><em>白文</em> | 年底各种各样的活动接种而来，穿衣记更新的也慢了</div>
 				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
-				</div>	
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_1">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
 						</div>
-						<div class="items_x2_i items_x2_i_3">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
 						</div>
 					</div>
 				</div>			
 			</div><!--col-3-->
 			<div class="column">
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>	
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>			
-			</div><!--col-4-->	
-			<div class="column">
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
 						<div class="items_x2_i items_x2_i_3">
@@ -152,20 +125,36 @@
 				</div>	
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>			
-			</div><!--col-5-->	
+				</div>		
+			</div><!--col-4-->	
 			<div class="column">
 				<div class="items_x4">
 					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
 				</div>
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>	
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+			</div><!--col-5-->	
+			<div class="column">
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>	
-			</div><!--col-6-->	
-			<div class="column">
+				<div class="items_x2">
+					<div class="items_x2_c">
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						</div>
+					</div>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>	
 				<div class="items_x2">
 					<div class="items_x2_c">
 						<div class="items_x2_i items_x2_i_1">
@@ -175,13 +164,9 @@
 							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
 						</div>
 					</div>
-				</div>	
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
+			</div><!--col-6-->	
+			<div class="column">
 				<div class="items_x2">
 					<div class="items_x2_c">
 						<div class="items_x2_i">
@@ -191,57 +176,66 @@
 							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
 						</div>
 					</div>
+				</div>	
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
 				</div>
 			</div><!--col-7-->	
 			<div class="column">
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
-				</div>
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>
-			</div><!--col-8-->		
-			<div class="column">
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
+						<div class="items_x2_i items_x2_i_1">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
 						</div>
-						<div class="items_x2_i">
-							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
-						</div>
-					</div>
-				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x2">
-					<div class="items_x2_c">
 						<div class="items_x2_i items_x2_i_2">
 							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
 						</div>
-						<div class="items_x2_i items_x2_i_3">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
-						</div>
 					</div>
-				</div>	
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				
+			</div><!--col-8-->		
+			<div class="column">
+				<div class="items_x4">
+					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
 			</div><!--col-9-->		
 			<div class="column">
 				<div class="items_x2">
 					<div class="items_x2_c">
+						<div class="items_x2_i items_x2_i_1">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+						<div class="items_x2_i items_x2_i_2">
+							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items">
+					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
+				</div>
+				<div class="items_x2">
+					<div class="items_x2_c">
 						<div class="items_x2_i">
 							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
 						</div>
@@ -250,58 +244,40 @@
 						</div>
 					</div>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-				<div class="items_x4">
-					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>	
 			</div><!--col-10-->		
 			<div class="column">
 				<div class="items">
 					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
 				<div class="items_x2">
 					<div class="items_x2_c">
-						<div class="items_x2_i items_x2_i_3">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
 						</div>
-						<div class="items_x2_i items_x2_i_1">
-							<p>去台湾的想法，也许只是来源于朋友无心的一个询问；<a href="">[详细]</a></p>
+						<div class="items_x2_i">
+							<a href=""><img src="img/3.png" alt="" width=100% height=100%></a>
 						</div>
 					</div>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-			</div><!--col-11-->				
-			<div class="column">
 				<div class="items_x4">
 					<a href=""><img src="img/2.png" alt="" width=100% height=100%></a>
-				</div>	
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
 				</div>
-				<div class="items">
-					<a href=""><img src="img/1.png" alt="" width=100% height=100%></a>
-				</div>
-			</div><!--col-12-->											
+			</div><!--col-11-->				
+													
 		</div>
+
+		
 	</div>
-	
 	<div class="footer" id="footer">
 		<div class="navigator" id="navigator">
 			<div class="scroll" id="scroll">
-				<div class="scrollbar"></div>
+				<div class="scrollbar" style="width: 1366px; left: 0px;"></div>
 			</div>
 		</div>
 		<div class="nav_bar">
-			<div class="nav_top">
-				<a href="#" class="arrow"></a>
-				<div class="nav_body">
+			<div class="nav_top" style="top: 0px;">
+				<a href="#" class="arrow" style="display: block;"></a>
+				<div class="nav_body" style="height: 0px;">
 					<ul class="nav_body_ul">
 						<li class="lrd"><a href="#" class="close">返回上页</a></li>
 						<li><a href="#" class="search">搜索博主</a></li>
@@ -311,16 +287,16 @@
 					</ul>
 				</div>
 			</div>
-			<div class="nav_hot">
+			<div class="nav_hot" style="top: 0px; height: 0px; display: none;">
 				<a href="#" class="close"></a>
 				<input type="text" value="" placeholder="请输入内容">
 				<a href="#" class="submit">提 交</a>
 			</div>	
-			<div class="nav_search">
+			<div class="nav_search" style="top: 0px; height: 0px; display: block;">
 				<a href="#" class="close"></a>
 				<input id="search_text" type="text" value="" placeholder="请输入内容">
 				<div class="select">
-					<a href="#" class="value"  id="select_1">内 容</a>
+					<a href="#" class="value" id="select_1">内 容</a>
 					<ul id="select_ul" class="dn">
 						<li><a href="#">达人库</a></li>
 						<li><a href="#">图库</a></li>
@@ -331,15 +307,49 @@
 			</div>	
 		</div>
 	</div>
+
+	<div class="text_detail" id="text_detail">
+		<div class="text_detail_l">
+			<a href="" class="text_detail_l_img">
+				<img src="http://new-img1.ol-img.com/moudlepic/172_module_images/512ac7b699afd_z.jpg" width="120" height="120">
+			</a>
+			<h3>范冰冰</h3>
+			<div class="text_detail_c">十年有你，十年有我，和onlylady的缘分放佛是上天注定。爱美之心把你我如磁石般吸引到这个大家庭。不离不弃，相伴过去的十年，未来的十年，甚至更多的十年</div>
+		</div>
+		<div class="text_detail_r">
+			
+		</div>
+	</div>
+	<div class="contact_form" id="contact_form">
+		<p>如果你想了解TA更多，请联系经纪人</p>
+		<div><input type="text" class="in_1" value="请输入标题"></div>
+		<div><textarea class="in_2">请输入内容</textarea></div>
+		<div><a href="javascript:;" class="in_btn">发送</a></div>
+	</div>
 	<script type="text/javascript">
+
+
 	$(document).ready(function(){
 		OL_blogger.setItemsSize();
 		$("#viewport").scrollable({mousewheel:true,size:4}).scrollbar({bar:"#scroll"});
 		OL_blogger.btnInit();
+		//check broswer
+		var adv = jQuery.support.leadingWhitespace;
+		if(!adv) alert("您的浏览器版本过低,这可能会影响到您的体验")
+
+		$("#viewport").scrollable({mousewheel:true});
+
+		$(".detail_btn").overlay({mask:"#000000",onBeforeLoad:function(){
+
+		}});
+		$("#contact").overlay({mask:"#000000",onBeforeLoad:function(){
+
+		}});
+		
 	})
-		window.onresize = function(){
-			OL_blogger.setItemsSize();
-		};
+	window.onresize = function(){OL_blogger.setItemsSize()}
+
+
 	</script>
 </body>
 </html>
